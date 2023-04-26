@@ -12,13 +12,7 @@ private:
   No<T>* proximo;
 
 public:
-  No (T val)
-  {
-    this->value = "";
-    this->proximo = nullptr;
-  }
-
-  No (T val)
+  No<T> (T val)
   {
     this->value = val;
     this->proximo = nullptr;
@@ -26,7 +20,7 @@ public:
  
   T getValue() const { return this->value; }
 
-  No* getProximo() const { return this->proximo; } 
+  No<T>* getProximo() const { return this->proximo; } 
   
   T setProximo(No* prox) { this->proximo = prox; }
   
