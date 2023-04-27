@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/program.dir/src/Music.cpp.o"
   "CMakeFiles/program.dir/src/Music.cpp.o.d"
+  "CMakeFiles/program.dir/src/Playlist.cpp.o"
+  "CMakeFiles/program.dir/src/Playlist.cpp.o.d"
   "CMakeFiles/program.dir/src/main.cpp.o"
   "CMakeFiles/program.dir/src/main.cpp.o.d"
   "program"

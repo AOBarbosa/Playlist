@@ -22,7 +22,7 @@ public:
 
   No<T>* getProximo() const { return this->proximo; } 
   
-  T setProximo(No* prox) { this->proximo = prox; }
+  void setProximo(No* prox) { this->proximo = prox; }
   
 };
 

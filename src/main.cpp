@@ -37,7 +37,7 @@ int main(int argc, char const *argv[])
     }
      if (option == "2")
      {
-      ListaEncadeada<No<Music>>* list = new ListaEncadeada<No<Music>>();
+      ListaEncadeada<Music*> list;
 
       std::getline(std::cin, musicName);
       music->setMusicName(musicName);
@@ -45,7 +45,7 @@ int main(int argc, char const *argv[])
       std::getline(std::cin, artistName);
       music->setArtistName(artistName);
 
-      No<Music>* node = new No<Music>(music);
+      list.insertAtTheEnd(music);
      }
   }
 

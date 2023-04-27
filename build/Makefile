@@ -153,6 +153,30 @@ src/Music.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Music.cpp.s
 .PHONY : src/Music.cpp.s
 
+src/Playlist.o: src/Playlist.cpp.o
+.PHONY : src/Playlist.o
+
+# target to build an object file
+src/Playlist.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Playlist.cpp.o
+.PHONY : src/Playlist.cpp.o
+
+src/Playlist.i: src/Playlist.cpp.i
+.PHONY : src/Playlist.i
+
+# target to preprocess a source file
+src/Playlist.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Playlist.cpp.i
+.PHONY : src/Playlist.cpp.i
+
+src/Playlist.s: src/Playlist.cpp.s
+.PHONY : src/Playlist.s
+
+# target to generate assembly for a file
+src/Playlist.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Playlist.cpp.s
+.PHONY : src/Playlist.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -189,6 +213,9 @@ help:
 	@echo "... src/Music.o"
 	@echo "... src/Music.i"
 	@echo "... src/Music.s"
+	@echo "... src/Playlist.o"
+	@echo "... src/Playlist.i"
+	@echo "... src/Playlist.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -8,6 +8,7 @@ include_directories( include )
 # Cria um executável com nome "program" com base nos arquivos main.cpp e func.cpp 
 add_executable( program
   src/main.cpp
-  src/Music.cpp )
+  src/Music.cpp
+  src/Playlist.cpp )
 # define C++14 standard
 set_property(TARGET program PROPERTY CXX_STANDARD 14)

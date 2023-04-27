@@ -27,9 +27,14 @@ public:
     this->tail = head;
   }
 
-  ~ListaEncadeada() //* Destructor
+  ~ListaEncadeada<T>() //* Destructor
   {
-    delete this->head;
+    while (head != nullptr)
+    {
+      No<T>* h = head;
+      head = head->getProximo();
+      delete h;
+    } 
   }
 
   void print()
