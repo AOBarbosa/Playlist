@@ -32,6 +32,8 @@ public:
 */
   T getValue() const { return this->value; }
 
+  void setValue(T v) { this->value = v; }
+
 /**
  * @brief Retorna o endereço do próximo Node salvo num Node
  * 

@@ -35,7 +35,7 @@ public:
   ChainedList(T type) //* Default Constructor
   {
     this->head = new Node<T*>(type);
-    this->tail = nullptr;
+    this->tail = head;
   }
 
 /**
@@ -130,11 +130,12 @@ public:
 /**
  * @brief Insere um novo Node no final da ChainedList
  * 
- * @param type Um valor de tipo genérico
+ * @param value Um valor de tipo genérico
 */
-  void insertAtTheEnd(T type)
+  void insertAtTheEnd(T value)
   {
-    Node<T> *novoNo = new Node<T>(type);
+    Node<T> *novoNo = new Node<T>(value);
+    asasdasd
 
     if (head == nullptr) {
       head = novoNo;
@@ -150,20 +151,23 @@ public:
 */
   void removeNode()
   {
-    if (!(head == nullptr)) {
+    if (!(head != nullptr)) {
       if (head->getNext() == nullptr) //* Se houver apenas 1 elemento na lista
       {
-        head = nullptr;
-      } else if (head->getNext()->getNext() == nullptr) //* Se houver apenas 2 elementos na lista
+        head->setValue(nullptr);
+      } 
+      else if (head->getNext()->getNext() == nullptr) //* Se houver apenas 2 elementos na lista
       {
         head->setNext(nullptr);
-      } else //* Para mais elementos
+      } 
+      else //* Para mais elementos
       {
         Node<T> *antePenultimo = head;
         Node<T> *penultimo = head->getNext();
         Node<T> *chain = head->getNext()->getNext();
 
-        while (chain) {
+        while (chain) 
+        {
           Node<T> *aux = penultimo;
           penultimo = head->getNext();
           antePenultimo = aux;
@@ -175,6 +179,24 @@ public:
         tail = antePenultimo;
       }
     }
+  }
+
+  void print()
+  {
+    std::cout << "\nImprimindo todos os elementos...\n";
+		Node<T>* h = this->head;
+
+		if(head == nullptr)
+			std::cout << "A lista NAO possui elementos!!\n";
+		else
+		{
+			while(h) // percorre a lista
+			{
+				std::cout << h->getValue() << std::endl;
+				h = h->getNext();
+			}
+			std::cout << std::endl;
+		}
   }
 };
 

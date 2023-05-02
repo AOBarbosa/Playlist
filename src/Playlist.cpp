@@ -84,8 +84,8 @@ void Playlist::removeMusicFromPlaylist() { this->playlist.removeNode(); }
 void Playlist::printPlaylist(Playlist p)
 {
   if(p.playlist.getHead()->getNext() == nullptr || p.playlist.getHead() == nullptr) {
-    if(p.playlist.getHead() == nullptr) cout << "Playlist vazia!" << endl;
-    else cout << "Fim da playlist." << endl;
+    if(p.playlist.getHead() == nullptr) std::cout << "Playlist vazia!" << endl;
+    else std::cout << "Fim da playlist." << std::endl;
   } 
   else {
     p.playlist.getHead()->getValue()->printMusic();

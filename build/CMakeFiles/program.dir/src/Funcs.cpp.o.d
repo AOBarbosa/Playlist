@@ -731,8 +731,7 @@ CMakeFiles/program.dir/src/Funcs.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/_types/_nl_item.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
-  /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/ChainedList.h \
-  /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Node.h \
+  /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Funcs.h \
   /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Music.h \
-  /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Playlist.h \
-  /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Funcs.h
+  /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/ChainedList.h \
+  /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Node.h

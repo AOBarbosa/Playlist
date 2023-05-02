@@ -1,9 +1,6 @@
 #include <iostream>
 #include <string>
 
-#include "ChainedList.h"
-#include "Music.h"
-#include "Playlist.h"
 #include "Funcs.h"
 
 void manageMusics(ChainedList<Music*> musics)
