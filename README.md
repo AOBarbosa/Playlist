@@ -29,3 +29,7 @@ André de Oliveira Barbosa
 
 João Antônio Costa Paiva Chagas
 
+## Dificuldades
+
+Encontramos dificuldade em colocar em pratica as funções e metodos criados para as classes.
+
