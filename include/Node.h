@@ -47,6 +47,12 @@ public:
  * @param *prox O endereço do próximo Node que quero salvar
 */
   void setNext(Node *prox) { this->next = prox; }
+
+  void setNode(Node *no)
+  {
+    this->setValue(no->getValue());
+    this->setNext(no->getNext());
+  }
 };
 
 #endif

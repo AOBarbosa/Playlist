@@ -36,14 +36,7 @@ int main(int argc, char const *argv[])
 
      if (option == "2")
      {
-      ChainedList<Music*> list;
-
-      std::getline(std::cin, musicName);
-      
-      std::getline(std::cin, artistName);
-      music->setArtistName(artistName);
-
-      list.insertAtTheEnd(music);
+      managePlaylist();
      }
   }
 

@@ -135,7 +135,6 @@ public:
   void insertAtTheEnd(T value)
   {
     Node<T> *novoNo = new Node<T>(value);
-    asasdasd
 
     if (head == nullptr) {
       head = novoNo;

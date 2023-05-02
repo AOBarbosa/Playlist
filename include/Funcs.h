@@ -10,5 +10,7 @@
 */
 void manageMusics(ChainedList<Music*> musics);
 
+void managePlaylist();
+
 
 #endif // FUNCS_H

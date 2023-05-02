@@ -2,6 +2,7 @@
 #include <string>
 
 #include "Funcs.h"
+#include "Playlist.h"
 
 void manageMusics(ChainedList<Music*> musics)
 {
@@ -50,13 +51,32 @@ void manageMusics(ChainedList<Music*> musics)
 
     if (action == "3")
     {
-      musics.getTail()->getValue()->printMusic();
+      Playlist temp("musics", musics);
+      temp.printPlaylist(temp);
     }
     
-    
-
     if (action == "0") break;
   }
 
-  system("clear || cls");
+  system("clear || cls"); 
+}
+
+void managePlaylist()
+{
+  std::string action;
+  while (action != "0")
+  {
+    std::cout << "====================-Manage Musics-===================" << std::endl;
+    std::cout << "1) Add new playlist;\n";
+    std::cout << "2) Remove playlist;\n";
+    std::cout << "3) List Playlist;\n";
+    std::cout << "0) Back;\n";
+    std::cout << "======================================================" << std::endl;
+    std::cout << "Choose your next action: ";
+    std::getline(std::cin, action);
+
+    if (action == "0") break;
+
+  }
+  system("clear || cls");   
 }

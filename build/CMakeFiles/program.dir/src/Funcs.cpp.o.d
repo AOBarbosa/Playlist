@@ -734,4 +734,5 @@ CMakeFiles/program.dir/src/Funcs.cpp.o: \
   /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Funcs.h \
   /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Music.h \
   /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/ChainedList.h \
-  /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Node.h
+  /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Node.h \
+  /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Playlist.h

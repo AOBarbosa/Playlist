@@ -94,3 +94,13 @@ void Playlist::printPlaylist(Playlist p)
     pTemp.printPlaylist(pTemp);
   }
 }
+
+void Playlist::setPlaylist(ChainedList<Music *> p)
+{
+  Node<Music *> *no;
+  no = p.getHead();
+  while(no != nullptr) {
+    this->playlist.insertAtTheEnd(no->getValue());
+    no = no->getNext();
+  }
+}

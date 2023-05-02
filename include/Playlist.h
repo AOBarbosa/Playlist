@@ -60,6 +60,10 @@ public:
  * @param p Uma Playlist
 */
   void printPlaylist(Playlist p);
+
+  void setPlaylist(ChainedList<Music *> playlist);
+
+
 };
 
 #endif

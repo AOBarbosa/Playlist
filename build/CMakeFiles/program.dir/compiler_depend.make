@@ -736,7 +736,8 @@ CMakeFiles/program.dir/src/Funcs.cpp.o: /Users/andrebarbosa/Documents/LP1/2023.1
   /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Funcs.h \
   /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Music.h \
   /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/ChainedList.h \
-  /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Node.h
+  /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Node.h \
+  /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Playlist.h
 
 CMakeFiles/program.dir/src/Music.cpp.o: /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/src/Music.cpp \
   /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Music.h \
@@ -2948,11 +2949,11 @@ CMakeFiles/program.dir/src/main.cpp.o: /Users/andrebarbosa/Documents/LP1/2023.1/
   /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Playlist.h
 
 
-/Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Playlist.h:
-
 /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/src/Playlist.cpp:
 
 /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/src/Music.cpp:
+
+/Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/Playlist.h:
 
 /Users/andrebarbosa/Documents/LP1/2023.1/projeto-1/include/ChainedList.h:
 
