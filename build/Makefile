@@ -129,6 +129,30 @@ program/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/build
 .PHONY : program/fast
 
+src/Funcs.o: src/Funcs.cpp.o
+.PHONY : src/Funcs.o
+
+# target to build an object file
+src/Funcs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Funcs.cpp.o
+.PHONY : src/Funcs.cpp.o
+
+src/Funcs.i: src/Funcs.cpp.i
+.PHONY : src/Funcs.i
+
+# target to preprocess a source file
+src/Funcs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Funcs.cpp.i
+.PHONY : src/Funcs.cpp.i
+
+src/Funcs.s: src/Funcs.cpp.s
+.PHONY : src/Funcs.s
+
+# target to generate assembly for a file
+src/Funcs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/program.dir/build.make CMakeFiles/program.dir/src/Funcs.cpp.s
+.PHONY : src/Funcs.cpp.s
+
 src/Music.o: src/Music.cpp.o
 .PHONY : src/Music.o
 
@@ -210,6 +234,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... program"
+	@echo "... src/Funcs.o"
+	@echo "... src/Funcs.i"
+	@echo "... src/Funcs.s"
 	@echo "... src/Music.o"
 	@echo "... src/Music.i"
 	@echo "... src/Music.s"

@@ -1,23 +1,28 @@
 #include <iostream>
 #include <string>
 
+#include "Funcs.h"
 #include "Music.h"
-#include "No.h"
-#include "ListaEncadeada.h"
+#include "Node.h"
+#include "Playlist.h"
+#include "ChainedList.h"
 
 
 int main(int argc, char const *argv[])
 {
-  std::cout << "Welcome to your newest music playlist!\n";
+  ChainedList<Playlist*> playlist;
+  ChainedList<Music*> musics;
 
   std::string option;
-  while (option != "-1")
+  while (option != "0")
   {
-    std::cout << "1) Inform a new music;\n";
-    std::cout << "2) Add a new music to a linked list;\n";
-    std::cout << "3) Print playlist;\n";
-    std::cout << "-1) Exit the program.\n";
-    std::cout << "O que deseja fazer? ";
+    std::cout << "==========================-Menu-======================" << std::endl;
+    std::cout << "1) Manage musics;\n";
+    std::cout << "2) Manage playlists;\n";
+    std::cout << "3) Manage musics in playlists;\n";
+    std::cout << "0) Exit the program.\n";
+    std::cout << "======================================================" << std::endl;
+    std::cout << "Choose your next action: ";
     std::getline(std::cin, option);
 
     Music* music = new Music();
@@ -26,21 +31,14 @@ int main(int argc, char const *argv[])
 
     if (option == "1")
     {
-      std::getline(std::cin, musicName);
-      music->setMusicName(musicName);
-      
-      std::getline(std::cin, artistName);
-      music->setArtistName(artistName);
-
-
-      std::cout << "Music: " << music->getMusicName() << "\nArtist: " << music->getArtistName() << "\n";
+      manageMusics(musics);
     }
+
      if (option == "2")
      {
-      ListaEncadeada<Music*> list;
+      ChainedList<Music*> list;
 
       std::getline(std::cin, musicName);
-      music->setMusicName(musicName);
       
       std::getline(std::cin, artistName);
       music->setArtistName(artistName);

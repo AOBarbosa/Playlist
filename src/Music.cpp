@@ -1,39 +1,74 @@
 #include "Music.h"
+#include <iostream>
 
+/**
+ * @file Music.cpp
+ * 
+ * @brief Implementação da Classe Music.
+*/
+
+/**
+ * @brief Construtor de Music básico
+*/
 Music::Music()
 {
-  musicName = new std::string;
-  artistName = new std::string;
+  this->musicName = new string;
+  this->artistName = new string;
 }
 
-Music::Music(std::string music, std::string artist)
+/**
+ * @brief Construtor de Music que recebe parametros
+ * 
+ * @param music Um nome de música
+ * @param artist Um nome de autor de música(s)
+*/
+Music::Music(string music, string artist)
 {
-  this->musicName = new std::string(music);
-  this->artistName = new std::string(artist);
+  this->musicName = new string(music);
+  this->artistName = new string(artist);
 }
 
+/**
+ * @brief Desconstrutor de Music
+*/
 Music::~Music()
 {
-  delete musicName;
-  delete artistName;
+  delete this->musicName;
+  delete this->artistName;
 }
 
-std::string Music::getMusicName() const
-{
-  return *musicName;
-}
+/**
+ * @brief Retorna o nome de uma música
+ * 
+ * @return O nome de uma música
+*/
+string Music::getMusicName() const { return *(this->musicName); }
 
-std::string Music::getArtistName() const
-{
-  return *artistName;
-}
+/**
+ * @brief Retorna o nome de um artista
+ * 
+ * @return O nome de um(a) artista
+*/
+string Music::getArtistName() const { return *(this->artistName); }
 
-void Music::setMusicName(std::string music)
-{
-  *this->musicName = music;
-}
+/**
+ * @brief Salva o nome de uma música numa Music
+ * 
+ * @param music Nome de uma música
+*/
+void Music::setMusicName(string music) { *(this->musicName) = music; }
 
-void Music::setArtistName(std::string artist)
-{
-  *this->artistName = artist;
+/**
+ * @brief Salva o nome de um(a) artista numa Music
+ * 
+ * @param music Nome de um(a) artista
+*/
+void Music::setArtistName(string artist) { *(this->artistName) = artist; }
+
+/**
+ * @brief Imprime os valores associados a uma Music
+*/
+void Music::printMusic() {
+  cout << "Music: " << getMusicName() << endl;
+  cout << "Artist: " << getArtistName() << endl;
 }

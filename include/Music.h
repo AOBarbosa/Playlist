@@ -1,25 +1,70 @@
 #ifndef MUSIC_H
 #define MUSIC_H
-
-#include <iostream>
 #include <string>
 
-class Music
-{
+using namespace std;
+
+/**
+ * @file Music.h
+ * 
+ * @brief Cabeçalho da Classe Music.
+*/
+class Music {
+
 private:
-  std::string *musicName;
-  std::string *artistName;
+  string *musicName; /**< Um endereço de um nome de música*/
+  string *artistName; /**< Um endereço de um nome de artista*/
 
 public:
-  Music(); //* Default Constructor
-  Music(std::string music, std::string artist); //* Constructor
-  ~Music(); //* Destructor
+/**
+ * @brief Construtor de Music básico
+*/
+  Music();
 
-  std::string getMusicName() const;
-  std::string getArtistName() const;
+/**
+ * @brief Construtor de Music que recebe parametros
+ * 
+ * @param music Um nome de música
+ * @param artist Um nome de autor de música(s)
+*/
+  Music(string music, string artist);
 
-  void setMusicName(std::string music);
-  void setArtistName(std::string artist);
+/**
+ * @brief Desconstrutor de Music
+*/
+  ~Music();
+
+/**
+ * @brief Retorna o nome de uma música
+ * 
+ * @return O nome de uma música
+*/
+  string getMusicName() const;
+
+/**
+ * @brief Retorna o nome de um artista
+ * 
+ * @return O nome de um(a) artista
+*/
+  string getArtistName() const;
+
+/**
+ * @brief Salva o nome de uma música numa Music
+ * 
+ * @param music Nome de uma música
+*/
+  void setMusicName(string music);
+
+/**
+ * @brief Salva o nome de um(a) artista numa Music
+ * 
+ * @param music Nome de um(a) artista
+*/
+  void setArtistName(string artist);
+
+/**
+ * @brief Imprime os valores associados a uma Music
+*/
+  void printMusic();
 };
-
-#endif // MUSIC_H
+#endif
