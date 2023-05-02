@@ -1,62 +1,31 @@
-# Desktop
-
-### Todo Preview
-
-<h1 display = "flex" align-items = "center">
-    <img alt="Preview Desktop" title="Preview Desktop" src="public/todoPreview.jpg" />
-</h1>
-
-### Empty Todo Preview
-
-<h1 display = "flex" align-items = "center">
-    <img alt="Preview Desktop" title="Preview Desktop" src="public/emptyTodoPreview.png" />
-</h1>
-
-<br>
-
-## 🧪 Technologies
-
-This project was developed using the following technologies:
-
-- [ReactJS](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [uuid](https://github.com/thenativeweb/uuidv4)
-- [Phosphor Icons](https://phosphoricons.com/)
-- [Vitest](https://vitest.dev/)
+# 🎶 Playlist
 
 ## 🚀 Getting started
 
-Clone the project and access the folder.
+Clone o projeto e acesse a pasta Playlist.
 
 ```bash
-git clone https://github.com/AOBarbosa/To-Do-List.git
+git clone https://github.com/AOBarbosa/Playlist.git
 
-cd To-Do-List
+cd Playlist
 
 ```
 
-Run this command to install the dependencies.
+Para rodar o projeto, digite os seguintes comandos:
 
 ```bash
-npm i
+cd build
+
+make
+
+./program
 ```
 
-And then run the following command to run the project.
+## Componentes
 
-```bash
-npm run dev
-```
+### Alunos
 
-Run this command to run the unit tests.
+André de Oliveira Barbosa
 
-```bash
-npm run test
-```
+João Antônio Costa Paiva Chagas
 
-## 🔖 Layout
-
-You can view the project through the links below:
-
-- [Figma](<https://www.figma.com/file/L88adFIgasZ660uzB9dnNN/ToDo-List-(Copy)?node-id=0%3A1&t=nkvm2KxVmEMhHykC-1>)
-
-Remembering that you need to have a [Figma](http://figma.com/) account to access it.

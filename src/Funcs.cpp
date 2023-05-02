@@ -6,6 +6,15 @@
 
 void manageMusics(ChainedList<Music*> musics)
 {
+
+  Music* music1 = new Music("Aerials", "System of a Down");
+  Music* music2 = new Music("Deixa Acontecer", "Grupo Revelação");
+  Music* music3 = new Music("Bones", "Imagine Dragon");
+
+  musics.insertAtTheEnd(music1);
+  musics.insertAtTheEnd(music2);
+  musics.insertAtTheEnd(music3);
+
   std::string action;
   while (action != "0")
   {
@@ -18,47 +27,41 @@ void manageMusics(ChainedList<Music*> musics)
     std::cout << "Choose your next action: ";
     std::getline(std::cin, action);
 
-    
-    Music* music1 = new Music("Aerials", "System of a Down");
-    Music* music2 = new Music("Deixa Acontecer", "Grupo Revelação");
-    Music* music3 = new Music("Bones", "Imagine Dragon");
 
-    musics.insertAtTheEnd(music1);
-    musics.insertAtTheEnd(music2);
-    musics.insertAtTheEnd(music3);
+    
 
     if (action == "1")
     {
-      Music* music = new Music();
-      std::string musicName;
-      std::string artistName;
+      // Music* music = new Music();
+      // std::string musicName;
+      // std::string artistName;
 
-      std::getline(std::cin, musicName);
-      std::getline(std::cin, artistName);
+      // std::getline(std::cin, musicName);
+      // std::getline(std::cin, artistName);
 
-      musics.insertAtTheEnd(music);
+      // musics.insertAtTheEnd(music);
 
-      system("clear || cls");
+      // system("clear || cls");
     }
 
     if (action == "2")
     {
-      musics.removeNode();
+      // musics.removeNode();
 
-      system("clear || cls");
+      // system("clear || cls");
 
     }
 
     if (action == "3")
     {
-      Playlist temp("musics", musics);
-      temp.printPlaylist(temp);
+      // Playlist temp("musics", musics);
+      // temp.printPlaylist(temp);
     }
-    
+
     if (action == "0") break;
   }
 
-  system("clear || cls"); 
+  system("clear || cls");
 }
 
 void managePlaylist()
@@ -78,5 +81,5 @@ void managePlaylist()
     if (action == "0") break;
 
   }
-  system("clear || cls");   
+  system("clear || cls");
 }
