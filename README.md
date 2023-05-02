@@ -33,3 +33,5 @@ João Antônio Costa Paiva Chagas
 
 Encontramos dificuldade em colocar em pratica as funções e metodos criados para as classes.
 
+Dificuldades em utilizar alocação dinâmica.
+
