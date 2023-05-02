@@ -31,7 +31,8 @@ João Antônio Costa Paiva Chagas
 
 ## Dificuldades
 
-Encontramos dificuldade em colocar em pratica as funções e metodos criados para as classes.
+Encontramos dificuldades em colocar em pratica as funções e metodos criados para as classes nas interfaces de gerenciamento.
 
 Dificuldades em utilizar alocação dinâmica.
 
+Dificuldade em configurar o doxygen.
