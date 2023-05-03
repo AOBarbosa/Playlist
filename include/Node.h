@@ -32,8 +32,6 @@ public:
 */
   T getValue() const { return this->value; }
 
-  void setValue(T v) { this->value = v; }
-
 /**
  * @brief Retorna o endereço do próximo Node salvo num Node
  * 
@@ -42,12 +40,24 @@ public:
   Node<T> *getNext() const { return this->next; }
 
 /**
+ * @brief Salva um valor num Node
+ * 
+ * @param v Um valor genérico
+*/
+  void setValue(T v) { this->value = v; }
+
+/**
  * @brief Salva o endereço de um Node num Node
  * 
- * @param *prox O endereço do próximo Node que quero salvar
+ * @param *prox Um endereço de Node
 */
   void setNext(Node *prox) { this->next = prox; }
 
+/**
+ * @brief Salva os atributos de um Node nos atributos de outro Node
+ * 
+ * @param *no Um endereço de Node
+*/
   void setNode(Node *no)
   {
     this->setValue(no->getValue());
