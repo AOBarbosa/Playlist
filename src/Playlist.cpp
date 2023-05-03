@@ -10,7 +10,7 @@
  * @brief Construtor de Playlist básico
 */
 Playlist::Playlist() {
-  this->playlistName = new string;
+  this->playlistName = "";
   this->playlist = ChainedList<Music *>();
 }
 
@@ -20,9 +20,9 @@ Playlist::Playlist() {
  * @param name Um nome para a Playlist
  * @param playlist Uma ChainedList de endereços de Music
 */
-Playlist::Playlist(string name, ChainedList<Music *> playlist)
+Playlist::Playlist(std::string name, ChainedList<Music *> playlist)
 {
-  this->playlistName = new string(name);
+  this->playlistName = name;
   this->playlist = ChainedList<Music *>(playlist);
 }
 
@@ -31,7 +31,6 @@ Playlist::Playlist(string name, ChainedList<Music *> playlist)
 */
 Playlist::~Playlist()
 {
-  delete this->playlistName;
   this->playlist.~ChainedList();
 }
 
@@ -84,7 +83,7 @@ void Playlist::removeMusicFromPlaylist() { this->playlist.removeNode(); }
 void Playlist::printPlaylist(Playlist p)
 {
   if(p.playlist.getHead()->getNext() == nullptr || p.playlist.getHead() == nullptr) {
-    if(p.playlist.getHead() == nullptr) std::cout << "Playlist vazia!" << endl;
+    if(p.playlist.getHead() == nullptr) std::cout << "Playlist vazia!" << std::endl;
     else std::cout << "Fim da playlist." << std::endl;
   } 
   else {

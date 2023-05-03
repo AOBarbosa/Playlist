@@ -12,7 +12,7 @@
 class Playlist {
 
 private:
-  string *playlistName; /**< Um endereço de um nome de uma Playlist*/
+  std::string playlistName; /**< Um nome de uma Playlist*/
   ChainedList<Music*> playlist; /**< Uma ChainedList de endereços de Music*/
 public:
 /**
@@ -26,7 +26,7 @@ public:
  * @param name Um nome para a Playlist
  * @param playlist Uma ChainedList de endereços de Music
 */
-  Playlist(string name, ChainedList<Music*> playlist);
+  Playlist(std::string name, ChainedList<Music*> playlist);
 
 /**
  * @brief Desconstrutor de Playlist
