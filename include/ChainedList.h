@@ -4,8 +4,6 @@
 #include "Node.h"
 #include <iostream>
 
-using namespace std;
-
 /**
  * @file ChainedList.h
  * 
@@ -151,15 +149,15 @@ public:
   void removeNode()
   {
     if (!(head != nullptr)) {
-      if (head->getNext() == nullptr) //* Se houver apenas 1 elemento na lista
+      if (head->getNext() == nullptr)
       {
         head->setValue(nullptr);
       } 
-      else if (head->getNext()->getNext() == nullptr) //* Se houver apenas 2 elementos na lista
+      else if (head->getNext()->getNext() == nullptr)
       {
         head->setNext(nullptr);
       } 
-      else //* Para mais elementos
+      else
       {
         Node<T> *antePenultimo = head;
         Node<T> *penultimo = head->getNext();
@@ -171,15 +169,17 @@ public:
           penultimo = head->getNext();
           antePenultimo = aux;
           chain = chain->getNext();
-        } //* Apos o while o penultimo vira o ultimo elemento, entao devemos
-          // deletar o prox elemento
-        delete antePenultimo->getNext(); //* Set the next element as a null pointer
-        antePenultimo->setNext(nullptr); //* Update tail value
+        }
+        delete antePenultimo->getNext();
+        antePenultimo->setNext(nullptr);
         tail = antePenultimo;
       }
     }
   }
 
+/**
+ * @brief Imprime os Node de uma ChainedList
+*/
   void print()
   {
     std::cout << "\nImprimindo todos os elementos...\n";
@@ -189,7 +189,7 @@ public:
 			std::cout << "A lista NAO possui elementos!!\n";
 		else
 		{
-			while(h) // percorre a lista
+			while(h)
 			{
 				std::cout << h->getValue() << std::endl;
 				h = h->getNext();
