@@ -2,8 +2,6 @@
 #define MUSIC_H
 #include <string>
 
-using namespace std;
-
 /**
  * @file Music.h
  * 
@@ -12,8 +10,8 @@ using namespace std;
 class Music {
 
 private:
-  string *musicName; /**< Um endereço de um nome de música*/
-  string *artistName; /**< Um endereço de um nome de artista*/
+  std::string musicName; /**< Um nome de música*/
+  std::string artistName; /**< Um nome de artista*/
 
 public:
 /**
@@ -27,7 +25,7 @@ public:
  * @param music Um nome de música
  * @param artist Um nome de autor de música(s)
 */
-  Music(string music, string artist);
+  Music(std::string music, std::string artist);
 
 /**
  * @brief Desconstrutor de Music
@@ -39,28 +37,28 @@ public:
  * 
  * @return O nome de uma música
 */
-  string getMusicName() const;
+  std::string getMusicName();
 
 /**
  * @brief Retorna o nome de um artista
  * 
  * @return O nome de um(a) artista
 */
-  string getArtistName() const;
+  std::string getArtistName();
 
 /**
  * @brief Salva o nome de uma música numa Music
  * 
  * @param music Nome de uma música
 */
-  void setMusicName(string music);
+  void setMusicName(std::string music);
 
 /**
  * @brief Salva o nome de um(a) artista numa Music
  * 
  * @param music Nome de um(a) artista
 */
-  void setArtistName(string artist);
+  void setArtistName(std::string artist);
 
 /**
  * @brief Imprime os valores associados a uma Music

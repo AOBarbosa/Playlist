@@ -12,8 +12,8 @@
 */
 Music::Music()
 {
-  this->musicName = new string;
-  this->artistName = new string;
+  this->musicName = "";
+  this->artistName = "";
 }
 
 /**
@@ -22,53 +22,49 @@ Music::Music()
  * @param music Um nome de música
  * @param artist Um nome de autor de música(s)
 */
-Music::Music(string music, string artist)
+Music::Music(std::string music, std::string artist)
 {
-  this->musicName = new string(music);
-  this->artistName = new string(artist);
+  this->musicName = music;
+  this->artistName = artist;
 }
 
 /**
  * @brief Desconstrutor de Music
 */
-Music::~Music()
-{
-  delete this->musicName;
-  delete this->artistName;
-}
+Music::~Music(){}
 
 /**
  * @brief Retorna o nome de uma música
  * 
  * @return O nome de uma música
 */
-string Music::getMusicName() const { return *(this->musicName); }
+std::string Music::getMusicName() { return this->musicName; }
 
 /**
  * @brief Retorna o nome de um artista
  * 
  * @return O nome de um(a) artista
 */
-string Music::getArtistName() const { return *(this->artistName); }
+std::string Music::getArtistName() { return this->artistName; }
 
 /**
  * @brief Salva o nome de uma música numa Music
  * 
  * @param music Nome de uma música
 */
-void Music::setMusicName(string music) { *(this->musicName) = music; }
+void Music::setMusicName(std::string music) { this->musicName = music; }
 
 /**
  * @brief Salva o nome de um(a) artista numa Music
  * 
  * @param music Nome de um(a) artista
 */
-void Music::setArtistName(string artist) { *(this->artistName) = artist; }
+void Music::setArtistName(std::string artist) { this->artistName = artist; }
 
 /**
  * @brief Imprime os valores associados a uma Music
 */
 void Music::printMusic() {
-  cout << "Music: " << getMusicName() << endl;
-  cout << "Artist: " << getArtistName() << endl;
+  std::cout << "Music: " << getMusicName() << std::endl;
+  std::cout << "Artist: " << getArtistName() << std::endl;
 }
