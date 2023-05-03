@@ -69,7 +69,7 @@ void managePlaylist()
   std::string action;
   while (action != "0")
   {
-    std::cout << "====================-Manage Musics-===================" << std::endl;
+    std::cout << "====================-Manage Playlists-===================" << std::endl;
     std::cout << "1) Add new playlist;\n";
     std::cout << "2) Remove playlist;\n";
     std::cout << "3) List Playlist;\n";
