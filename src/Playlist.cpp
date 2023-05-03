@@ -73,24 +73,24 @@ void Playlist::addMusic(Music music) { this->playlist.insertAtTheEnd(&music); }
 /**
  * @brief Descarta a última Music da Playlist
 */
-void Playlist::removeMusicFromPlaylist() { this->playlist.removeNode(); }
+void Playlist::removeMusicFromPlaylist() { this->playlist.removeLastNode(); }
 
 /**
  * @brief Imprime todas as Music da Playlist
  * 
  * @param p Uma Playlist
 */
-void Playlist::printPlaylist(Playlist p)
+void Playlist::printPlaylist(Playlist *p)
 {
-  if(p.playlist.getHead()->getNext() == nullptr || p.playlist.getHead() == nullptr) {
-    if(p.playlist.getHead() == nullptr) std::cout << "Playlist vazia!" << std::endl;
+  if(p->playlist.getHead()->getNext() == nullptr || p->playlist.getHead() == nullptr) {
+    if(p->playlist.getHead() == nullptr) std::cout << "Playlist vazia!" << std::endl;
     else std::cout << "Fim da playlist." << std::endl;
   } 
   else {
-    p.playlist.getHead()->getValue()->printMusic();
-    Playlist pTemp;
-    pTemp.playlist.setHead(p.playlist.getHead()->getNext());
-    pTemp.printPlaylist(pTemp);
+    p->playlist.getHead()->getValue()->printMusic();
+    Playlist *pTemp = new Playlist("",p->playlist);
+    pTemp->playlist.setHead(pTemp->playlist.getHead()->getNext());
+    pTemp->printPlaylist(pTemp);
   }
 }
 /*

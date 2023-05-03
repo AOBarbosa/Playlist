@@ -32,8 +32,9 @@ void manageMusics(ChainedList<Music *> *musics)
       Music music;
       std::string musicName;
       std::string artistName;
-      std::cout << "Insira o nome e o artista da música" << std::endl;
+      std::cout << "Insira o nome da música:" << std::endl;
       std::getline(std::cin, musicName);
+      std::cout << "Insira o nome do artista da música:" << std::endl;      
       std::getline(std::cin, artistName);
 
       musics->insertAtTheEnd(&music);
@@ -43,16 +44,16 @@ void manageMusics(ChainedList<Music *> *musics)
 
     if (action == "2")
     {
-      // musics.removeNode();
+      musics->removeLastNode();
 
-      // system("clear || cls");
+      system("clear || cls");
 
     }
 
     if (action == "3")
     {
-      // Playlist temp("musics", musics);
-      // temp.printPlaylist(temp);
+      Playlist *temp = new Playlist("musics", *musics);
+      temp->printPlaylist(temp);
     }
 
     if (action == "0") break;

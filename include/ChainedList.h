@@ -146,7 +146,7 @@ public:
 /**
  * @brief Remove o último Node da ChainedList
 */
-  void removeNode()
+  void removeLastNode()
   {
     if (!(head != nullptr)) {
       if (head->getNext() == nullptr)
