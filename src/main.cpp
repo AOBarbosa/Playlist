@@ -10,8 +10,8 @@
 
 int main(int argc, char const *argv[])
 {
-  ChainedList<Playlist*> playlist;
-  ChainedList<Music*> musics;
+  ChainedList<Playlist> playlist;
+  ChainedList<Music> *musics = new ChainedList<Music>;
 
   std::string option;
   while (option != "0")
@@ -25,9 +25,9 @@ int main(int argc, char const *argv[])
     std::cout << "Choose your next action: ";
     std::getline(std::cin, option);
 
-    Music* music = new Music();
-    std::string musicName;
-    std::string artistName;
+    //Music* music = new Music();
+    //std::string musicName;
+    //std::string artistName;
 
     if (option == "1")
     {

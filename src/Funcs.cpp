@@ -4,16 +4,16 @@
 #include "Funcs.h"
 #include "Playlist.h"
 
-void manageMusics(ChainedList<Music*> musics)
+void manageMusics(ChainedList<Music> *musics)
 {
 
-  Music* music1 = new Music("Aerials", "System of a Down");
-  Music* music2 = new Music("Deixa Acontecer", "Grupo Revelação");
-  Music* music3 = new Music("Bones", "Imagine Dragon");
+  Music music1("Aerials", "System of a Down");
+  Music music2("Deixa Acontecer", "Grupo Revelação");
+  Music music3("Bones", "Imagine Dragon");
 
-  musics.insertAtTheEnd(music1);
-  musics.insertAtTheEnd(music2);
-  musics.insertAtTheEnd(music3);
+  musics->insertAtTheEnd(music1);
+  musics->insertAtTheEnd(music2);
+  musics->insertAtTheEnd(music3);
 
   std::string action;
   while (action != "0")

@@ -132,14 +132,14 @@ public:
 */
   void insertAtTheEnd(T value)
   {
-    Node<T> *novoNo = new Node<T>(value);
+    Node<T> novoNo(value);
 
     if (head == nullptr) {
-      head = novoNo;
-      tail = novoNo;
+      head = &novoNo;
+      tail = &novoNo;
     } else {
       tail->setNext(head);
-      tail = novoNo;
+      tail = &novoNo;
     }
   }
 
@@ -185,8 +185,7 @@ public:
     std::cout << "\nImprimindo todos os elementos...\n";
 		Node<T>* h = this->head;
 
-		if(head == nullptr)
-			std::cout << "A lista NAO possui elementos!!\n";
+		if(head == nullptr) std::cout << "A lista NAO possui elementos!!\n";
 		else
 		{
 			while(h)
