@@ -1,3 +1,3 @@
-/home/joao.antonio.costa.119/Documentos/Playlist/build/CMakeFiles/program.dir
-/home/joao.antonio.costa.119/Documentos/Playlist/build/CMakeFiles/edit_cache.dir
-/home/joao.antonio.costa.119/Documentos/Playlist/build/CMakeFiles/rebuild_cache.dir
+/home/joao/projects/LP1/U1/Playlist/build/CMakeFiles/program.dir
+/home/joao/projects/LP1/U1/Playlist/build/CMakeFiles/edit_cache.dir
+/home/joao/projects/LP1/U1/Playlist/build/CMakeFiles/rebuild_cache.dir
