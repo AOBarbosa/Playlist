@@ -11,7 +11,7 @@
 int main(int argc, char const *argv[])
 {
   ChainedList<Playlist> playlist;
-  ChainedList<Music> *musics = new ChainedList<Music>;
+  ChainedList<Music *> *musics = new ChainedList<Music *>();
 
   std::string option;
   while (option != "0")

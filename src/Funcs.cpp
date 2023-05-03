@@ -4,16 +4,16 @@
 #include "Funcs.h"
 #include "Playlist.h"
 
-void manageMusics(ChainedList<Music> *musics)
+void manageMusics(ChainedList<Music *> *musics)
 {
 
   Music music1("Aerials", "System of a Down");
   Music music2("Deixa Acontecer", "Grupo Revelação");
   Music music3("Bones", "Imagine Dragon");
 
-  musics->insertAtTheEnd(music1);
-  musics->insertAtTheEnd(music2);
-  musics->insertAtTheEnd(music3);
+  musics->insertAtTheEnd(&music1);
+  musics->insertAtTheEnd(&music2);
+  musics->insertAtTheEnd(&music3);
 
   std::string action;
   while (action != "0")
@@ -27,21 +27,18 @@ void manageMusics(ChainedList<Music> *musics)
     std::cout << "Choose your next action: ";
     std::getline(std::cin, action);
 
-
-    
-
     if (action == "1")
     {
-      // Music* music = new Music();
-      // std::string musicName;
-      // std::string artistName;
+      Music music;
+      std::string musicName;
+      std::string artistName;
+      std::cout << "Insira o nome e o artista da música" << std::endl;
+      std::getline(std::cin, musicName);
+      std::getline(std::cin, artistName);
 
-      // std::getline(std::cin, musicName);
-      // std::getline(std::cin, artistName);
+      musics->insertAtTheEnd(&music);
 
-      // musics.insertAtTheEnd(music);
-
-      // system("clear || cls");
+      system("clear || cls");
     }
 
     if (action == "2")

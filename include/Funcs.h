@@ -8,7 +8,7 @@
  * @brief Entra na primeira opção do menu
  * 
 */
-void manageMusics(ChainedList<Music> *musics);
+void manageMusics(ChainedList<Music *> *musics);
 
 void managePlaylist();
 

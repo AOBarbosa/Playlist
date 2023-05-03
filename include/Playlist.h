@@ -13,7 +13,7 @@ class Playlist {
 
 private:
   std::string playlistName; /**< Um nome de uma Playlist*/
-  ChainedList<Music*> playlist; /**< Uma ChainedList de endereços de Music*/
+  ChainedList<Music *> playlist; /**< Uma ChainedList de endereços de Music*/
 public:
 /**
  * @brief Construtor de Playlist básico
@@ -26,7 +26,7 @@ public:
  * @param name Um nome para a Playlist
  * @param playlist Uma ChainedList de endereços de Music
 */
-  Playlist(std::string name, ChainedList<Music*> playlist);
+  Playlist(std::string name, ChainedList<Music *> playlist);
 
 /**
  * @brief Desconstrutor de Playlist
@@ -47,7 +47,7 @@ public:
  * 
  * @param music Um endereço de uma Music
 */
-  void addMusic(Music* music);
+  void addMusic(Music music);
 
 /**
  * @brief Descarta a última Music da Playlist
@@ -61,7 +61,7 @@ public:
 */
   void printPlaylist(Playlist p);
 
-  void setPlaylist(ChainedList<Music *> playlist);
+  //void setPlaylist(ChainedList<Music> playlist);
 
 
 };

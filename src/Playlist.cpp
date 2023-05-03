@@ -23,7 +23,7 @@ Playlist::Playlist() {
 Playlist::Playlist(std::string name, ChainedList<Music *> playlist)
 {
   this->playlistName = name;
-  this->playlist = ChainedList<Music *>(playlist);
+  this->playlist = playlist;
 }
 
 /**
@@ -43,7 +43,7 @@ Playlist::~Playlist()
 */
 Music* Playlist::nextMusicToBePlayed(int id)
 {
-  Music* temp = new Music();
+  Music *temp = new Music();
   for(int i = 0; i < id; i++) {
     if(!i) {
       if(this->playlist.getHead() == nullptr) return nullptr;
@@ -68,7 +68,7 @@ Music* Playlist::nextMusicToBePlayed(int id)
  * 
  * @param music Um endereço de uma Music
 */
-void Playlist::addMusic(Music *music) { this->playlist.insertAtTheEnd(music); }
+void Playlist::addMusic(Music music) { this->playlist.insertAtTheEnd(&music); }
 
 /**
  * @brief Descarta a última Music da Playlist
@@ -93,7 +93,7 @@ void Playlist::printPlaylist(Playlist p)
     pTemp.printPlaylist(pTemp);
   }
 }
-
+/*
 void Playlist::setPlaylist(ChainedList<Music *> p)
 {
   Node<Music *> *no;
@@ -103,3 +103,4 @@ void Playlist::setPlaylist(ChainedList<Music *> p)
     no = no->getNext();
   }
 }
+*/
