@@ -65,6 +65,6 @@ void Music::setArtistName(std::string artist) { this->artistName = artist; }
  * @brief Imprime os valores associados a uma Music
 */
 void Music::printMusic() {
-  std::cout << "Music: " << getMusicName() << std::endl;
-  std::cout << "Artist: " << getArtistName() << std::endl;
+  std::cout << "Music: " << this->getMusicName() << std::endl;
+  std::cout << "Artist: " << this->getArtistName() << std::endl;
 }
