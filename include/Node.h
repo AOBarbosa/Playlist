@@ -1,58 +1,28 @@
 #ifndef NODE_H
 #define NODE_H
 
-/**
- * @file Node.h
- * 
- * @brief Cabeçalho e Implementação da Classe Node.
-*/
-template <typename T> class Node {
+template <typename T>
+class Node {
 
 private:
-
-  T value; /**< Um valor de tipo genérico*/
-  
-  Node<T> *next; /**< Um endereço de um Node de tipo genérico*/
+    T value; 
+    Node<T>* next; 
 
 public:
-/**
- * @brief Construtor de Node
- * 
- * @param v Valor genérico
-*/
-  Node(T v) {
-    this->value = v;
-    this->next = nullptr;
-  }
+    Node(T value) : value(value), next(nullptr) {}
 
-/**
- * @brief Retorna o valor de um Node
- * 
- * @return Valor salvo num Node
-*/
-  T getValue() const { return this->value; }
+    T getValue() const { return value; }
 
-  void setValue(T v) { this->value = v; }
+    void setValue(T value) { this->value = value; }
 
-/**
- * @brief Retorna o endereço do próximo Node salvo num Node
- * 
- * @return Endereço salvo num Node
-*/
-  Node<T> *getNext() const { return this->next; }
+    Node<T>* getNext() const { return next; }
 
-/**
- * @brief Salva o endereço de um Node num Node
- * 
- * @param *prox O endereço do próximo Node que quero salvar
-*/
-  void setNext(Node *prox) { this->next = prox; }
+    void setNext(Node<T>* next) { this->next = next; }
 
-  void setNode(Node *no)
-  {
-    this->setValue(no->getValue());
-    this->setNext(no->getNext());
-  }
+    void setNode(const Node<T>* node) {
+        this->value = node->getValue();
+        this->next = node->getNext();
+    }
 };
 
 #endif

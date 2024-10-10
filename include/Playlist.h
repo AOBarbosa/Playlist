@@ -3,67 +3,31 @@
 
 #include "ChainedList.h"
 #include "Music.h"
+#include <string>
 
-/**
- * @file Playlist.h
- * 
- * @brief Cabeçalho da Classe Playlist.
-*/
+
 class Playlist {
-
 private:
-  string *playlistName; /**< Um endereço de um nome de uma Playlist*/
-  ChainedList<Music*> playlist; /**< Uma ChainedList de endereços de Music*/
-public:
-/**
- * @brief Construtor de Playlist básico
-*/
-  Playlist();
+    std::string* playlistName; 
+    ChainedList<Music*> playlist;
 
-/**
- * @brief Construtor de Playlist que recebe parametros
- * 
- * @param name Um nome para a Playlist
- * @param playlist Uma ChainedList de endereços de Music
-*/
-  Playlist(string name, ChainedList<Music*> playlist);
+  public:
 
-/**
- * @brief Desconstrutor de Playlist
-*/
-  ~Playlist();
+      Playlist();
 
-/**
- * @brief Retorna o endereço de uma Music respeitando uma contagem
- * 
- * @param id Um inteiro para contar
- * 
- * @return O endereço de uma Music
-*/
-  Music* nextMusicToBePlayed(int id);
+      Playlist(std::string name, ChainedList<Music*> playlist);
 
-/**
- * @brief Salva uma nova Music na Playlist
- * 
- * @param music Um endereço de uma Music
-*/
-  void addMusic(Music* music);
+      ~Playlist();
 
-/**
- * @brief Descarta a última Music da Playlist
-*/
-  void removeMusicFromPlaylist();
+      Music* nextMusicToBePlayed(int id);
 
-/**
- * @brief Imprime todas as Music da Playlist
- * 
- * @param p Uma Playlist
-*/
-  void printPlaylist(Playlist p);
+      void addMusic(Music* music);
 
-  void setPlaylist(ChainedList<Music *> playlist);
+      void removeMusicFromPlaylist();
 
+      void printPlaylist(Playlist p);
 
+      void setPlaylist(ChainedList<Music*> playlist);
 };
 
 #endif
