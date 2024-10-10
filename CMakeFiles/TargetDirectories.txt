@@ -1,0 +1,3 @@
+/Users/andrebarbosa/Documents/UFRN/2024.2/boas-praticas/Playlist/CMakeFiles/program.dir
+/Users/andrebarbosa/Documents/UFRN/2024.2/boas-praticas/Playlist/CMakeFiles/edit_cache.dir
+/Users/andrebarbosa/Documents/UFRN/2024.2/boas-praticas/Playlist/CMakeFiles/rebuild_cache.dir

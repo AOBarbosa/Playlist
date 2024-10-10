@@ -6,197 +6,143 @@
 
 using namespace std;
 
-/**
- * @file ChainedList.h
- * 
- * @brief Cabeçalho e Implementação da Classe ChainedList.
-*/
 template <typename T> class ChainedList {
 
-private:
-  Node<T> *head; /**< O endereço do primeiro Node de tipo genérico da ChainedList*/
-  Node<T> *tail; /**< O endereço do último Node de tipo genérico da ChainedList*/
+  private:
+    Node<T> *head;
+    Node<T> *tail;
 
-public:
-/**
- * @brief Construtor de ChainedList básico
-*/
-  ChainedList()
-  {
-    this->head = nullptr;
-    this->tail = nullptr;
-  }
+    bool isEmptyList() const { return head == nullptr; }
 
-/**
- * @brief Construtor de ChainedList que recebe parâmetro
- * 
- * @param type Um valor de tipo genérico
-*/
-  ChainedList(T type) //* Default Constructor
-  {
-    this->head = new Node<T*>(type);
-    this->tail = head;
-  }
+    bool isSingleNode() const { return head->getNext() == nullptr; }
 
-/**
- * @brief Desconstrutor de ChainedLIst
-*/
-  ~ChainedList<T>() //* Destructor
-  {
-    while (head != nullptr) {
-      Node<T> *h = head;
-      head = head->getNext();
-      delete h;
+    bool hasTwoNodes() const { return head->getNext()->getNext() == nullptr; }
+
+    void clearHead() { head->setValue(nullptr); }
+
+    void removeSecondNode() { head->setNext(nullptr); }
+
+    void removeLastFromMultipleNodes() 
+    {
+      Node<T>* preLast = this->head;
+      Node<T>* last = head->getNext();
+      Node<T>* next = last->getNext();
+
+      while (next != nullptr) {
+          preLast = last;
+          last = next;
+          next = next->getNext();
+      }
+
+      delete last;
+      preLast->setNext(nullptr);
+      tail = preLast;
     }
-  }
 
-/**
- * @brief Retorna o endereço do primeiro Node de tipo genérico da ChainedList
- * 
- * @return Endereço do primeiro Node de tipo genérico da ChainedList
-*/
-  Node<T>* getHead()
-  {
-    return this->head;
-  }
-
-/**
- * @brief Retorna o endereço do último Node de tipo genérico da ChainedList
- * 
- * @return Endereço do último Node de tipo genérico da ChainedList
-*/
-  Node<T>* getTail()
-  {
-    return this->tail;
-  }
-
-/**
- * @brief Retorna o valor de um Node se o metodo de busca permitir
- * 
- * @param no Um Node de tipo genérico
- * 
- * @return Um valor de tipo genérico
-*/
-  T getCurrentValue(Node<T> no) {
-    if (isInThelist(no) == true) return no;
-  }
-
-/**
- * @brief Metodo de busca de valores na ChainedList
- * 
- * @param no Um Node de tipo genérico
- * 
- * @return Um valor bool
-*/
-  bool isInThelist(Node<T> no)
-  {
-    Node<T> *h = head;
-
-    while (h) {
-      if (h->getValue() == no) return true;
-      h = h->getNext();
+  public:
+    ChainedList()
+    {
+      this->head = nullptr;
+      this->tail = nullptr;
     }
-    return false;
-  }
 
-/**
- * @brief Salva um novo endereço para ser o primeiro Node de tipo genérico da ChainedList
- * 
- * @param no Um endereço de Node de tipo genérico
-*/
-  void setHead(Node<T> *no)
-  {
-    this->head = no;
-  }
-
-/**
- * @brief Insere um novo Node no começo da ChainedList
- * 
- * @param type Um valor de tipo genérico
-*/
-  void insertAtBegin(T type) //* 
-  {
-    Node<T> *novoNo = new Node<T>(type);
-
-    if (head == nullptr) {
-      head = novoNo;
-      tail = novoNo;
-    } else {
-      novoNo->setNext(head);
-      head = novoNo;
+    ChainedList(T type)
+    {
+      this->head = new Node<T*>(type);
+      this->tail = head;
     }
-  }
 
-/**
- * @brief Insere um novo Node no final da ChainedList
- * 
- * @param value Um valor de tipo genérico
-*/
-  void insertAtTheEnd(T value)
-  {
-    Node<T> *novoNo = new Node<T>(value);
-
-    if (head == nullptr) {
-      head = novoNo;
-      tail = novoNo;
-    } else {
-      tail->setNext(head);
-      tail = novoNo;
-    }
-  }
-
-/**
- * @brief Remove o último Node da ChainedList
-*/
-  void removeNode()
-  {
-    if (!(head != nullptr)) {
-      if (head->getNext() == nullptr) //* Se houver apenas 1 elemento na lista
-      {
-        head->setValue(nullptr);
-      } 
-      else if (head->getNext()->getNext() == nullptr) //* Se houver apenas 2 elementos na lista
-      {
-        head->setNext(nullptr);
-      } 
-      else //* Para mais elementos
-      {
-        Node<T> *antePenultimo = head;
-        Node<T> *penultimo = head->getNext();
-        Node<T> *chain = head->getNext()->getNext();
-
-        while (chain) 
-        {
-          Node<T> *aux = penultimo;
-          penultimo = head->getNext();
-          antePenultimo = aux;
-          chain = chain->getNext();
-        } //* Apos o while o penultimo vira o ultimo elemento, entao devemos
-          // deletar o prox elemento
-        delete antePenultimo->getNext(); //* Set the next element as a null pointer
-        antePenultimo->setNext(nullptr); //* Update tail value
-        tail = antePenultimo;
+    ~ChainedList<T>()
+    {
+      while (head != nullptr) {
+        Node<T> *h = head;
+        head = head->getNext();
+        delete h;
       }
     }
-  }
 
-  void print()
-  {
-    std::cout << "\nImprimindo todos os elementos...\n";
-		Node<T>* h = this->head;
+    Node<T>* getHead() { return this->head; }
 
-		if(head == nullptr)
-			std::cout << "A lista NAO possui elementos!!\n";
-		else
-		{
-			while(h) // percorre a lista
-			{
-				std::cout << h->getValue() << std::endl;
-				h = h->getNext();
-			}
-			std::cout << std::endl;
-		}
-  }
+    Node<T>* getTail() { return this->tail; }
+
+    T getCurrentValue(Node<T> no) 
+    { 
+      if (isInThelist(no) == true) return no; 
+    
+      return nullptr;
+    }
+
+    bool isInThelist(Node<T> no)
+    {
+      Node<T> *h = head;
+
+      while (h) {
+        if (h->getValue() == no) return true;
+        h = h->getNext();
+      }
+
+      return false;
+    }
+
+    void setHead(Node<T> *no){ this->head = no; }
+
+    void insertAtBegin(T type) 
+    {
+      Node<T> *novoNo = new Node<T>(type);
+
+      if (this->isEmptyList()) {
+        this->head = novoNo;
+        this->tail = novoNo;
+      } else {
+        novoNo->setNext(head);
+        this->head = novoNo;
+      }
+    }
+
+    void insertAtTheEnd(T value)
+    {
+      Node<T> *novoNo = new Node<T>(value);
+
+      if (this->isEmptyList()) {
+        this->head = novoNo;
+        this->tail = novoNo;
+      } else {
+        this->tail->setNext(head);
+        this->tail = novoNo;
+      }
+    }
+
+    void removeNode()
+    {
+      if (this->isEmpty()) return;
+
+      if (isSingleNode()) {
+        clearHead();
+      } 
+      else if (hasTwoNodes()) {
+          removeSecondNode();
+      } 
+      else {
+          removeLastFromMultipleNodes();
+      }
+    }
+
+    void print()
+    {
+      std::cout << "\nImprimindo todos os elementos...\n";
+      Node<T>* h = this->head;
+
+      if(this->isEmptyList()) {
+        std::cout << "A lista NAO possui elementos!!\n";
+        return;
+      }
+
+      while(h) {
+        std::cout << h->getValue() << std::endl;
+        h = h->getNext();
+      }
+      std::cout << std::endl;
+    }
 };
 
 #endif
