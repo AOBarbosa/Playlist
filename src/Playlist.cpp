@@ -24,11 +24,11 @@ Music* Playlist::nextMusicToBePlayed(int id) {
 }
 
 void Playlist::addMusic(Music* music) {
-    playlist.insertAtTheEnd(music);
+    playlist.insertAtEnd(music);
 }
 
 void Playlist::removeMusicFromPlaylist() {
-    playlist.removeNode();
+    playlist.removeLastNode();
 }
 
 void Playlist::printPlaylist(Playlist p) {
@@ -50,7 +50,7 @@ void Playlist::printPlaylist(Playlist p) {
 void Playlist::setPlaylist(ChainedList<Music*> newPlaylist) {
     Node<Music*>* currentNode = newPlaylist.getHead();
     while (currentNode != nullptr) {
-        playlist.insertAtTheEnd(currentNode->getValue());
+        playlist.insertAtEnd(currentNode->getValue());
         currentNode = currentNode->getNext();
     }
 }

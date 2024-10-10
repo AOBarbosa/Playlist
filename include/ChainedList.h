@@ -4,144 +4,111 @@
 #include "Node.h"
 #include <iostream>
 
-using namespace std;
+template <typename T> 
+class ChainedList {
 
-template <typename T> class ChainedList {
+private:
+    Node<T>* head;
+    Node<T>* tail;
 
-  private:
-    Node<T> *head;
-    Node<T> *tail;
+    bool isEmpty() const { return head == nullptr; }
 
-    bool isEmptyList() const { return head == nullptr; }
-
-    bool isSingleNode() const { return head->getNext() == nullptr; }
-
-    bool hasTwoNodes() const { return head->getNext()->getNext() == nullptr; }
-
-    void clearHead() { head->setValue(nullptr); }
-
-    void removeSecondNode() { head->setNext(nullptr); }
-
-    void removeLastFromMultipleNodes() 
-    {
-      Node<T>* preLast = this->head;
-      Node<T>* last = head->getNext();
-      Node<T>* next = last->getNext();
-
-      while (next != nullptr) {
-          preLast = last;
-          last = next;
-          next = next->getNext();
-      }
-
-      delete last;
-      preLast->setNext(nullptr);
-      tail = preLast;
+    void removeSingleNode() { 
+        delete head;
+        head = nullptr;
+        tail = nullptr;
     }
 
-  public:
-    ChainedList()
-    {
-      this->head = nullptr;
-      this->tail = nullptr;
+    void removeLastNodeFromMultipleNodes() {
+        Node<T>* current = head;
+        Node<T>* previous = nullptr;
+
+        while (current->getNext() != nullptr) {
+            previous = current;
+            current = current->getNext();
+        }
+
+        delete current;
+        previous->setNext(nullptr);
+        tail = previous;
     }
 
-    ChainedList(T type)
-    {
-      this->head = new Node<T*>(type);
-      this->tail = head;
+public:
+    ChainedList() : head(nullptr), tail(nullptr) {}
+
+    explicit ChainedList(T value) {
+        head = new Node<T>(value);
+        tail = head;
     }
 
-    ~ChainedList<T>()
-    {
-      while (head != nullptr) {
-        Node<T> *h = head;
-        head = head->getNext();
-        delete h;
-      }
+    ~ChainedList() {
+        while (head != nullptr) {
+            Node<T>* current = head;
+            head = head->getNext();
+            delete current;
+        }
     }
 
-    Node<T>* getHead() { return this->head; }
+    Node<T>* getHead() const { return head; }
 
-    Node<T>* getTail() { return this->tail; }
+    Node<T>* getTail() const { return tail; }
 
-    T getCurrentValue(Node<T> no) 
-    { 
-      if (isInThelist(no) == true) return no; 
-    
-      return nullptr;
+    bool contains(const T& value) const {
+        Node<T>* current = head;
+        while (current != nullptr) {
+            if (current->getValue() == value) {
+                return true;
+            }
+            current = current->getNext();
+        }
+        return false;
     }
 
-    bool isInThelist(Node<T> no)
-    {
-      Node<T> *h = head;
+    void setHead(Node<T>* newHead) { head = newHead; }
 
-      while (h) {
-        if (h->getValue() == no) return true;
-        h = h->getNext();
-      }
-
-      return false;
+    void insertAtBeginning(const T& value) {
+        Node<T>* newNode = new Node<T>(value);
+        if (isEmpty()) {
+            head = tail = newNode;
+        } else {
+            newNode->setNext(head);
+            head = newNode;
+        }
     }
 
-    void setHead(Node<T> *no){ this->head = no; }
-
-    void insertAtBegin(T type) 
-    {
-      Node<T> *novoNo = new Node<T>(type);
-
-      if (this->isEmptyList()) {
-        this->head = novoNo;
-        this->tail = novoNo;
-      } else {
-        novoNo->setNext(head);
-        this->head = novoNo;
-      }
+    void insertAtEnd(const T& value) {
+        Node<T>* newNode = new Node<T>(value);
+        if (isEmpty()) {
+            head = tail = newNode;
+        } else {
+            tail->setNext(newNode);
+            tail = newNode;
+        }
     }
 
-    void insertAtTheEnd(T value)
-    {
-      Node<T> *novoNo = new Node<T>(value);
+    void removeLastNode() {
+        if (isEmpty()) return;
 
-      if (this->isEmptyList()) {
-        this->head = novoNo;
-        this->tail = novoNo;
-      } else {
-        this->tail->setNext(head);
-        this->tail = novoNo;
-      }
+        if (head == tail) {
+            removeSingleNode();
+        } else {
+            removeLastNodeFromMultipleNodes();
+        }
     }
 
-    void removeNode()
-    {
-      if (this->isEmpty()) return;
+    void print() const {
+        if (isEmpty()) {
+            std::cout << "The list is empty!\n";
+            return;
+        }
 
-      if (isSingleNode()) {
-        clearHead();
-      } 
-      else if (hasTwoNodes()) {
-          removeSecondNode();
-      } 
-      else {
-          removeLastFromMultipleNodes();
-      }
-    }
-
-    void print()
-    {
-      std::cout << "\nImprimindo todos os elementos...\n";
-      Node<T>* h = this->head;
-
-      if(this->isEmptyList()) {
-        std::cout << "A lista NAO possui elementos!!\n";
-        return;
-      }
-
-      while(h) {
-        std::cout << h->getValue() << std::endl;
-        h = h->getNext();
-      }
-      std::cout << std::endl;
+        std::cout << "Printing all elements:\n";
+        Node<T>* current = head;
+        while (current != nullptr) {
+            std::cout << current->getValue() << std::endl;
+            current = current->getNext();
+        }
+        std::cout << std::endl;
     }
 };
 
